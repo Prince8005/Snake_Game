@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101511">
+  <title>Snake — Neon Arcade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Snake Arcade home">
+        <span class="brand-mark" aria-hidden="true">✳</span>
+        <span>arcade<span class="brand-dot">.</span></span>
+      </a>
+      <div class="status"><span class="status-dot"></span> READY TO PLAY</div>
+      <a class="top-link" href="#how-to-play">HOW TO PLAY <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <section class="game-layout" aria-label="Snake game">
+      <div class="intro">
+        <p class="eyebrow"><span></span> THE CLASSIC, REIMAGINED</p>
+        <h1>Stay sharp.<br><span>Keep growing.</span></h1>
+        <p class="intro-copy">Chase the fruit. Trust your instincts.<br>How long can you last?</p>
+        <div class="stats">
+          <div class="stat-card">
+            <span class="stat-label">YOUR SCORE</span>
+            <strong id="score">00</strong>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">PERSONAL BEST</span>
+            <strong id="best-score">00</strong>
+          </div>
+        </div>
+        <div class="level-row">
+          <span class="stat-label">SPEED LEVEL</span>
+          <span class="level-value" id="level">01</span>
+          <div class="level-track" aria-label="Speed level"><span id="level-fill"></span></div>
+        </div>
+        <section class="how-to" id="how-to-play">
+          <h2>HOW TO PLAY</h2>
+          <div class="control-tip">
+            <span class="key-group" aria-hidden="true"><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd></span>
+            <span>Move around</span>
+          </div>
+          <div class="control-tip">
+            <span class="key-single" aria-hidden="true">SPACE</span>
+            <span>Pause the game</span>
+          </div>
+        </section>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board-topline">
+          <div class="board-title"><span class="live-dot"></span><span id="game-status">GAME READY</span></div>
+          <button class="icon-button" id="sound-button" type="button" aria-label="Toggle sound" title="Toggle sound">
+            <svg id="sound-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a5 5 0 0 1 0 6m3-9a9 9 0 0 1 0 12"/></svg>
+          </button>
+        </div>
+        <div class="game-frame">
+          <canvas id="game-canvas" width="600" height="600" aria-label="Snake game board"></canvas>
+          <div class="game-overlay" id="game-overlay">
+            <div class="overlay-content">
+              <div class="overlay-icon" id="overlay-icon" aria-hidden="true">✳</div>
+              <p class="overlay-kicker" id="overlay-kicker">READY WHEN YOU ARE</p>
+              <h2 id="overlay-title">Let’s play.</h2>
+              <p class="overlay-copy" id="overlay-copy">Grab the apples. Don’t hit the walls—or yourself.</p>
+              <button class="play-button" id="play-button" type="button"><span id="play-label">START GAME</span><span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="board-footer">
+          <span><span class="apple-mini">●</span> EAT TO GROW</span>
+          <button class="restart-button" id="restart-button" type="button"><span aria-hidden="true">↻</span> RESTART</button>
+        </div>
+        <div class="mobile-controls" aria-label="Touch controls">
+          <button type="button" data-direction="up" aria-label="Move up">↑</button>
+          <div>
+            <button type="button" data-direction="left" aria-label="Move left">←</button>
+            <button type="button" data-direction="down" aria-label="Move down">↓</button>
+            <button type="button" data-direction="right" aria-label="Move right">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span>MADE FOR THE LOVE OF THE GAME</span>
+      <span class="footer-sparkle" aria-hidden="true">✳</span>
+      <span>ONE MORE ROUND?</span>
+    </footer>
+  </main>
+</body>
+</html>
